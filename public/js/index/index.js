@@ -1,4 +1,13 @@
 window.addEventListener('load', () => {
+  const allWrapper = document.querySelector('.all-wrapper');
+  const allHeaderAnimationMaxHeight = 150;
+  const allHeaderWrapper = document.querySelector('.all-header');
+
+  allWrapper.addEventListener('scroll', event => {
+    allHeaderWrapper.style.borderBottomColor = `rgba(254, 254, 254, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
+    allHeaderWrapper.style.boxShadow = `0 0 3px rgba(254, 254, 254, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
+  });
+
   let isSubscribeFormSent = false;
   const subscribeForm = document.getElementById('footer-subscribe-form');
   const emailValidationError = document.getElementById('email-validation-error');

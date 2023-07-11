@@ -2,6 +2,11 @@
   --box-padding: 20px;
   --content-gap: 150px;
 
+  --header-font-size: 48px;
+  --title-font-size: 36px;
+  --subtitle-font-size: 24px;
+  --text-font-size: 17px;
+
   --header-height: 80px;
   --header-padding: 40px;
   --header-download-button-height: 45px;
@@ -12,7 +17,7 @@
 
   --product-header-image-height: 50px;
   --product-projects-image-width: 1000px;
-  --product-login-image-width: 350px;
+  --product-login-image-width: 320px;
 
   --security-wrapper-width: 500px;
 
@@ -26,9 +31,9 @@
   --graphs-one-image-width: 500px;
   --graphs-two-image-width: 200px;
 
-  --update-navbar-image-width: 250px;
+  --update-navbar-image-width: 240px;
   --update-installation-image-width: 600px;
-  --update-text-width: 700px;
+  --update-text-width: 660px;
 
   --footer-input-height: 35px;
   --footer-input-width: 500px;
@@ -86,7 +91,7 @@
 }
 .all-header-download-button-text {
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   color: var(--text-color);
 }
 
@@ -103,7 +108,7 @@
 }
 .all-header-language-button-text {
   font-weight: 600;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   color: var(--text-color);
   margin-right: 7px;
 }
@@ -140,11 +145,10 @@
 }
 .subtitle {
   margin-top: var(--box-padding);
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 20px;
   color: var(--text-color);
-  margin-bottom: 15px;
-  max-width: 500px;
+  max-width: calc(min(500px, 100vw - 2 * var(--content-horizontal-padding)));
   text-align: center;
   line-height: 150%;
 }
@@ -153,7 +157,7 @@
   display: inline;
 }
 .subtitle-highlight {
-  color: var(--main-color);
+  color: var(--button-background-color);
   font-weight: 600;
 }
 
@@ -165,7 +169,7 @@
   width: 100%;
   min-width: 100%;
   align-items: center;
-  margin-bottom: calc(4 * var(--box-padding));
+  margin-bottom: calc(2 * var(--box-padding));
 }
 
 .download-button {
@@ -298,13 +302,13 @@
 }
 .security-title {
   font-weight: 600;
-  font-size: 48px;
+  font-size: var(--header-font-size);
   color: var(--text-color);
   margin-bottom: 10px;
 }
 .security-description {
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   line-height: 180%;
   color: var(--text-color);
   text-align: justify;
@@ -380,7 +384,7 @@
 
 .steps-title {
   font-weight: 600;
-  font-size: 36px;
+  font-size: var(--title-font-size);
   color: var(--text-color);
   text-align: right;
   margin-left: auto;
@@ -388,7 +392,7 @@
 }
 .steps-description {
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   line-height: 180%;
   color: var(--text-color);
   text-align: right;
@@ -432,25 +436,25 @@
 }
 .graphs-title {
   font-weight: 600;
-  font-size: 36px;
+  font-size: var(--title-font-size);
   color: var(--text-color);
   margin-bottom: 25px;
 }
 .graphs-description {
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   line-height: 180%;
   color: var(--text-color);
   margin-bottom: 25px;
 }
 .graphs-subtitle {
   font-weight: 500;
-  font-size: 24px;
+  font-size: var(--subtitle-font-size);
   color: var(--text-color);
 }
 .graphs-subtitle-highlight {
   font-weight: 600;
-  color: var(--main-color);
+  color: var(--button-background-color);
 }
 
 .graphs-image-wrapper {
@@ -470,6 +474,7 @@
   min-width: var(--graphs-one-image-width);
   border-radius: 15px;
   overflow: hidden;
+  z-index: 2;
 }
 .graphs-two-image {
   opacity: 0.9;
@@ -478,7 +483,7 @@
   width: var(--graphs-two-image-width);
   min-width: var(--graphs-two-image-width);
   box-shadow: 0 0 5px rgba(2, 2, 6, 0.9);
-  z-index: 2;
+  z-index: 3;
   left: 0;
   bottom: 0;
   transform: translate(-5%, 50%);
@@ -528,7 +533,7 @@
 .update-text-wrapper {
   height: 100%;
   min-height: 100%;
-  flex: 1;
+  width: calc(100vw - 2 * var(--content-horizontal-padding) - var(--update-navbar-image-width) - 20px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -536,10 +541,10 @@
 }
 .update-title {
   font-weight: 600;
-  font-size: 26px;
+  font-size: var(--title-font-size);
   color: var(--text-color);
-  width: var(--update-text-width);
-  min-width: var(--update-text-width);
+  width: calc(min(100%, var(--update-text-width)));
+  min-width: calc(min(100%, var(--update-text-width)));
   display: flex;
   align-items: center;
 }
@@ -550,19 +555,19 @@
 .update-description {
   margin-top: 25px;
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   color: var(--text-color);
   line-height: 175%;
-  width: var(--update-text-width);
-  min-width: var(--update-text-width);
+  width: calc(min(100%, var(--update-text-width)));
+  min-width: calc(min(100%, var(--update-text-width)));
 }
 .update-subtitle {
   margin-top: 25px;
   font-weight: 600;
   font-size: 20px;
   color: var(--text-color);
-  width: var(--update-text-width);
-  min-width: var(--update-text-width);
+  width: calc(min(100%, var(--update-text-width)));
+  min-width: calc(min(100%, var(--update-text-width)));
   text-align: right;
 }
 
@@ -580,7 +585,7 @@
 .end-content-title {
   margin-bottom: 25px;
   font-weight: 600;
-  font-size: 26px;
+  font-size: var(--subtitle-font-size);
   color: var(--text-color);
 }
 
@@ -613,7 +618,7 @@
 }
 .all-footer-subtitle {
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-font-size);
   color: var(--text-color);
   line-height: 125%;
 }
@@ -690,7 +695,7 @@
   color: var(--text-color);
 }
 .all-footer-reach-us-link {
-  color: var(--main-color);
+  color: var(--button-background-color);
   margin: 0 5px;
   text-decoration: none;
 }
@@ -713,4 +718,223 @@
   font-weight: 400;
   font-size: 13px;
   color: var(--text-color);
+}
+
+@media only screen and (max-width: 1200px) {
+  :root {
+    --content-gap: 120px;
+    --product-login-image-width: 300px;
+    --security-wrapper-width: 400px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  :root {
+    --product-header-image-height: 45px;
+    --security-wrapper-width: 450px;
+    --steps-project-details-image-width: 400px;
+    --steps-login-image-width: 300px;
+  }
+  .product-header-image {
+    left: 5px;
+  }
+  .product-login-image {
+    transform: translateY(-90%);
+    left: 10px;
+  }
+  .product-small-details-image {
+    transform: translateY(-20%);
+  }
+  .product-small-details-image {
+    right: 10px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  :root {
+    --content-gap: 100px;
+
+    --header-font-size: 46px;
+    --title-font-size: 30px;
+    --subtitle-font-size: 20px;
+  }
+  .steps-wrapper {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+  }
+  .steps-text-wrapper {
+    height: fit-content;
+    min-height: fit-content;
+    margin-top: 20px;
+  }
+  .steps-title, .graphs-title {
+    margin-bottom: 20px;
+  }
+  .node-operations-image {
+    margin-top: var(--content-gap);
+  }
+  .graphs-wrapper {
+    flex-direction: column;
+  }
+  .graphs-image-wrapper {
+    width: 100%;
+    min-width: 100%;
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+  .graphs-two-image {
+    left: var(--graphs-one-image-width);
+    bottom: unset;
+    top: 0;
+    transform: translate(-10%, -50%);
+  }
+  .graphs-text-wrapper {
+    padding-right: 0;
+  }
+  .update-wrapper {
+    flex-direction: row-reverse;
+  }
+  .update-navbar-image {
+    margin-left: 20px;
+    transform: translateY(-30%);
+  }
+  .update-installation-image {
+    right: unset;
+    top: unset;
+    left: 0;
+    bottom: -20px;
+    transform: translate(-60%, 0);
+  }
+  .update-text-wrapper {
+    justify-content: flex-start;
+  }
+  .update-wrapper {
+    margin-top: var(--content-gap);
+  }
+}
+@media only screen and (max-width: 860px) {
+  :root {
+    --product-header-image-height: 40px;
+    --product-login-image-width: 250px;
+  }
+  .product-small-details-image {
+    right: 0;
+    transform: translate(20%, -20%);
+  }
+  .product-login-image {
+    transform: translate(-20%, -70%);
+  }
+  .steps-login-image {
+    transform: translate(100%, -20%);
+  }
+  .node-operations-image {
+    margin-top: 40px;
+  }
+  .update-wrapper {
+    flex-direction: row;
+  }
+  .update-text-wrapper {
+    margin-left: auto;
+    z-index: 2;
+  }
+  .update-description {
+    text-align: right;
+  }
+  .update-navbar-image {
+    position: absolute;
+    margin-left: calc(-1 * var(--content-horizontal-padding));
+    margin-top: -100px;
+  }
+  .update-installation-image {
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  :root {
+    --content-gap: 90px;
+
+    --header-font-size: 42px;
+    --title-font-size: 25px;
+    --subtitle-font-size: 18px;
+    --text-font-size: 16px;
+  }
+  .graphs-text-wrapper {
+    width: 60%;
+    min-width: 60%;
+  }
+  .update-text-wrapper {
+    width: calc(100vw - 2 * var(--content-horizontal-padding) - var(--update-navbar-image-width) + 20px);
+  }
+}
+@media only screen and (max-width: 700px) {
+  :root {
+    --content-gap: 50px;
+    --product-header-image-height: 35px;
+  }
+  .product-login-image {
+    display: none;
+  }
+  .update-text-wrapper {
+    width: calc(100vw - 2 * var(--content-horizontal-padding) - var(--update-navbar-image-width));
+  }
+  .update-title-top {
+    margin-left: -30px;
+    margin-top: -20px;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .update-title-top {
+    margin-left: -70px;
+    margin-top: -35px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .update-title-top {
+    margin-left: -100px;
+    margin-top: -35px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  :root {
+    --content-gap: 30px;
+    --header-font-size: 33px;
+    --title-font-size: 24px;
+    --subtitle-font-size: 17px;
+    --text-font-size: 15px;
+    --header-download-button-height: 35px;
+    --header-download-button-width: 100px;
+    --product-login-image-width: 200px;
+    --product-header-image-height: 30px;
+    --steps-login-image-width: 220px;
+    --security-wrapper-width: 310px;
+  }
+  .title {
+    font-size: 48px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .security-title {
+    margin-bottom: 0;
+  }
+  .steps-image-wrapper {
+    width: 100%;
+    min-width: 100%;
+  }
+  .steps-project-details-image {
+    width: 60vw;
+    min-width: 60vw;
+  }
+  .steps-login-image {
+    transform: translate(0, 0);
+    bottom: unset;
+    left: unset;
+    top: -10px;
+    right: 0;
+    margin-right: 0;
+  }
+  /* .security-title {
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+  } */
 }
