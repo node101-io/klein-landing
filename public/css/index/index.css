@@ -224,9 +224,9 @@
   opacity: 1;
 }
 .other-download-button-icon {
-  height: 16px;
+  height: 19px;
   width: auto;
-  fill: rgba(68, 90, 114, 1);
+  margin-left: 4px;
 }
 
 .product-images-wrapper {
