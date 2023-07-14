@@ -4,8 +4,9 @@ block content
     .all-header
       a.all-header-logo-wrapper(href='/' + (query_lang ? '?lang = ' + query_lang : ''))
         img.all-header-logo(src=`${URL}/img/logo/header.svg` alt='klein logo')
-      a.all-header-download-button(href=download_links[os] target='_blank')
-        span.all-header-download-button-text= __('Try Now')
+      if os && download_links
+        a.all-header-download-button(href=download_links[os] target='_blank')
+          span.all-header-download-button-text= __('Try Now')
       if lang == 'tr'
         a.all-header-language-button(href='/?lang=en')
           .all-header-language-button-text EN
@@ -88,10 +89,11 @@ block content
       .end-content-wrapper
         h1.end-content-title= __('Do not deal with terminals and errors anymore!')
         h1.end-content-title= __('Start using Klein now.')
-        a.download-button(href=download_links[os] target='_blank')
-          span.download-button-text= __('Download Now')
-          svg.download-button-icon(viewbox='0 0 12 15' xmlns='http://www.w3.org/2000/svg')
-            path(d='M11.3436 8.91421L10.6365 8.20711L6.18526 12.6583V0.927443H5.18823V12.6583L0.736997 8.20711L0.0298907 8.91421L5.68674 14.5711L11.3436 8.91421Z')
+        if os && download_links
+          a.download-button(href=download_links[os] target='_blank')
+            span.download-button-text= __('Download Now')
+            svg.download-button-icon(viewbox='0 0 12 15' xmlns='http://www.w3.org/2000/svg')
+              path(d='M11.3436 8.91421L10.6365 8.20711L6.18526 12.6583V0.927443H5.18823V12.6583L0.736997 8.20711L0.0298907 8.91421L5.68674 14.5711L11.3436 8.91421Z')
     .all-footer
       .all-footer-top-wrapper
         h1.all-footer-title Klein
