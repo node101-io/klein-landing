@@ -1,7 +1,42 @@
+const SLIDE_ANIMATION_INTERVAL = 7;
+const SLIDE_ANIMATION_STEP = 1;
+
+let boxPadding = null;
+let activeProject = null;
+let activeProjectToLeft = 0;
+
+function removeProject(element) {
+  const newElement = element.cloneNode(true);
+  element.remove();
+  newElement.style.marginLeft = `${boxPadding}px`;
+  document.querySelector('.projects-wrapper').appendChild(newElement);
+};
+
+function projectsSlideAnimation() {
+  if (activeProjectToLeft > activeProject.getBoundingClientRect().width + boxPadding * 2) {
+    activeProjectToLeft = 0;
+    removeProject(activeProject);
+    activeProject = document.querySelector('.projects-wrapper').childNodes[0];
+    activeProject.style.marginLeft = `0`;
+  } else {
+    activeProjectToLeft += SLIDE_ANIMATION_STEP;
+    activeProject.style.marginLeft = `-${activeProjectToLeft}px`;
+  }
+  setTimeout(() => {
+    projectsSlideAnimation();
+  }, SLIDE_ANIMATION_INTERVAL)
+};
+
 window.addEventListener('load', () => {
+  boxPadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--box-padding').replace('px',  ''));
+  activeProjectToLeft = boxPadding;
+
   const allWrapper = document.querySelector('.all-wrapper');
   const allHeaderAnimationMaxHeight = 150;
   const allHeaderWrapper = document.querySelector('.all-header');
+
+  activeProject = document.querySelector('.projects-wrapper').childNodes[0];
+  projectsSlideAnimation();
 
   allWrapper.addEventListener('scroll', event => {
     allHeaderWrapper.style.borderBottomColor = `rgba(254, 254, 254, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
