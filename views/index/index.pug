@@ -2,7 +2,7 @@ extends ../partials/head
 block content
   .all-wrapper
     .all-header
-      a.all-header-logo-wrapper(href='/' + (query_lang ? '?lang = ' + query_lang : ''))
+      a.all-header-logo-wrapper(href='/' + (query_lang ? '?lang=' + query_lang : ''))
         img.all-header-logo(src=`${URL}/img/logo/header.svg` alt='klein logo')
       if os && download_links
         a.all-header-download-button(href=download_links[os] target='_blank')
@@ -22,26 +22,28 @@ block content
         h2.subtitle
           span= __('Klein is a public-good project aiming for everyone to be able to ')
           span.subtitle-highlight= __('install and manage')
-          span= __(' their nodes and join ')
-          span.subtitle-highlight= __('testnets')
-          span= __(' without writing a single line of code in tens of different chains.')
+          span= __(' their nodes without writing a single line of code in tens of different Cosmos chains.')
       if os && download_links
         .download-wrapper
           a.download-button(href=download_links[os] target='_blank')
             span.download-button-text= __('Download Now')
-            svg.download-button-icon(viewbox='0 0 12 15' xmlns='http://www.w3.org/2000/svg')
-              path(d='M11.3436 8.91421L10.6365 8.20711L6.18526 12.6583V0.927443H5.18823V12.6583L0.736997 8.20711L0.0298907 8.91421L5.68674 14.5711L11.3436 8.91421Z')
+            if os == 'mac'
+              img.download-button-icon(src=`${URL}/img/os/white/mac.svg` alt='klein mac os')
+            if os == 'linux'
+              img.download-button-icon(src=`${URL}/img/os/white/linux.svg` alt='klein linux os')
+            if os == 'windows'
+              img.download-button-icon(src=`${URL}/img/os/white/windows.svg` alt='klein windows os')
           .download-info-wrapper
-            span.download-text #{__('Also available on')}:
+            span.download-text= __('Also available on:')
             if os != 'mac'
               a.other-download-button(href=download_links.mac target='_blank')
-                img.other-download-button-icon(src=`${URL}/img/os/mac.svg` alt='klein mac os')
+                img.other-download-button-icon(src=`${URL}/img/os/gray/mac.svg` alt='klein mac os')
             if os != 'linux'
               a.other-download-button(href=download_links.linux target='_blank' style='margin-bottom: -3px')
-                img.other-download-button-icon(src=`${URL}/img/os/linux.svg` alt='klein linux os')
+                img.other-download-button-icon(src=`${URL}/img/os/gray/linux.svg` alt='klein linux os')
             if os != 'windows'
               a.other-download-button(href=download_links.windows target='_blank')
-                img.other-download-button-icon(src=`${URL}/img/os/windows.svg` alt='klein windows os')
+                img.other-download-button-icon(src=`${URL}/img/os/gray/windows.svg` alt='klein windows os')
       .product-images-wrapper
         img.product-header-image(src=`${URL}/img/klein/header.png` alt='Klein testnet mainnet header image')
         img.product-projects-image(src=`${URL}/img/klein/projects.png` alt='Klein projects board image')
@@ -62,7 +64,7 @@ block content
           h1.steps-title= __('Choose a Blockchain,')
           h1.steps-title= __('Connect to your Server,')
           h1.steps-title= __('Install the Node.')
-          p.steps-description= __('Does not matter if you are an experienced blockchain developer, a founder discovering new chains, or just a blockchain enthusiast trying to join a new testnet; Klein is the perfect Web3 tool for you.')
+          p.steps-description= __('Does not matter if you are an experienced blockchain validator, a founder discovering new chains, or just a blockchain enthusiast trying to join a new testnet; Klein is the perfect Web3 tool for you.')
       img.node-operations-image(src=`${URL}/img/klein/operations.png` alt='Klein node operations image')
       .graphs-wrapper
         .graphs-text-wrapper
@@ -72,7 +74,8 @@ block content
           p.graphs-description= __('Use Klein to access your node from various platforms and monitor its CPU, RAM, and memory usage.')
           h2.graphs-subtitle
             span= __('Make your node\'s uptime ')
-            span.graphs-subtitle-highlight #{__('100%')}.
+            span.graphs-subtitle-highlight #{__('100%')}
+            span= __('.')
         .graphs-image-wrapper
           img.graphs-one-image(src=`${URL}/img/klein/graph1.png` alt='Klein graph one image')
           img.graphs-two-image(src=`${URL}/img/klein/graph2.png` alt='Klein graph two image')
@@ -84,7 +87,7 @@ block content
           h1.update-title
             span.update-title-bottom= __('Latest technology,')
             span.update-title-top= __('Highest block.')
-          p.update-description= __('By using the cutting edge technology, Klein brings most effective ways of accessing the chain to you, making sure you are always on the highest block, validating as hard as you can. Without a single line of code, be the validator every chain needs.')
+          p.update-description= __('By using the foremost technology, Klein brings most effective ways of accessing the chain to you, making sure you are always on the highest block, validating as hard as you can. Without a single line of code, be the validator every chain needs.')
           h2.update-subtitle= __('Because it is all about decentralization.')
       .end-content-wrapper
         h1.end-content-title= __('Do not deal with terminals and errors anymore!')
@@ -97,7 +100,7 @@ block content
     .all-footer
       .all-footer-top-wrapper
         h1.all-footer-title Klein
-        h2.all-footer-subtitle= __('Never miss an update on Klein, the new face of Web3 validators.')
+        h2.all-footer-subtitle= __('Never miss an update on Klein!')
         form.all-footer-input-wrapper#footer-subscribe-form
           input.all-footer-input#footer-email(type='email' placeholder=__('Your email address') autocomplete='none' name='new-password')
           button.all-footer-input-button
@@ -116,4 +119,7 @@ block content
           a.all-footer-reach-us-link(href='mailto:hello@node101.io' target='_blank') hello@node101
           span= __('email address.')
       .all-footer-bottom-wrapper
-        span.all-footer-bottom-text= __('Designed & Developed by node101. All rights reserved.')
+        span.all-footer-bottom-text
+          span= __('Designed & Developed by')
+          a.all-footer-bottom-link(href='https://node101.io' target='_blank') node101
+          span= __('All rights reserved.')
