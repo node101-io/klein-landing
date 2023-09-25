@@ -4,12 +4,12 @@ const router = express.Router();
 
 const generateConstantData = require('../middleware/generateConstantData');
 
-const indexPostController = require('../controllers/subscribe/post');
+const subscribePostController = require('../controllers/subscribe/post');
 
 router.post(
   '/',
     generateConstantData,
-    indexPostController
+    subscribePostController
 );
 
 module.exports = router;
