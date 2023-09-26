@@ -58,9 +58,9 @@ module.exports = (req, res) => {
         },
         os,
         download_links: {
-          mac: data.platforms['darwin-x86_64'].url,
-          linux: data.platforms['linux-x86_64'].url,
-          windows: data.platforms['windows-x86_64'].url
+          mac: `https://github.com/node101-io/klein/releases/download/v${data.version}/Klein_${data.version}_x64.dmg`,
+          linux: `https://github.com/node101-io/klein/releases/download/v${data.version}/klein_${data.version}_amd64.AppImage`,
+          windows: `https://github.com/node101-io/klein/releases/download/v${data.version}/Klein_${data.version}_x64_en-US.msi`,
         },
         projects
       });
