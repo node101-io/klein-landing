@@ -1,5 +1,5 @@
 :root {
-  --box-padding: 20px;
+  --box-padding: 15px;
   --content-gap: 150px;
 
   --header-font-size: 48px;
@@ -72,8 +72,35 @@
   margin-right: auto;
 }
 .all-header-logo {
-  height: 35px;
+  height: 33px;
   margin-top: -5px;
+}
+
+.all-header-socials-wrapper {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-width: fit-content;
+  height: fit-content;
+  min-height: fit-content;
+}
+.each-all-header-social {
+  height: fit-content;
+  min-height: fit-content;
+  width: fit-content;
+  min-width: fit-content;
+  padding-right: var(--box-padding);
+  cursor: pointer;
+  fill: var(--text-color-two);
+}
+.each-all-header-social:hover {
+  fill: var(--text-color);
+}
+.each-all-header-social-icon {
+  height: 18px;
+  min-height: 18px;
+  width: auto;
+  min-width: auto;
 }
 
 .all-header-download-button {
