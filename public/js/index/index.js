@@ -1,4 +1,4 @@
-const SLIDE_ANIMATION_INTERVAL = 7;
+const SLIDE_ANIMATION_INTERVAL = 14;
 const SLIDE_ANIMATION_STEP = 1;
 
 let boxPadding = null;

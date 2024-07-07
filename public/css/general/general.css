@@ -3,7 +3,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-family: 'Sora', 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 html {
   width: 100vw;
@@ -66,7 +66,7 @@ input[type=number] {
   --hover-color-light: rgba(254, 254, 254, 0.8);
   --button-background-color: rgba(89, 100, 250, 1);
   --button-text-color: rgba(250, 250, 250, 1);
-  --text-color: rgba(254, 254, 254, 1);
+  --text-color: rgba(69, 69, 69, 1);
   --text-color-two: rgba(212, 212, 212, 1);
   --placeholder-color: rgba(248, 248, 248, 0.6);
 }
@@ -76,6 +76,10 @@ input[type=number] {
 }
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/Sora-VariableFont_wght.ttf');
 }
 
 @media only screen and (min-width: 1900px) {

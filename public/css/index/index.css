@@ -21,7 +21,7 @@
 
   --security-wrapper-width: 500px;
 
-  --each-project-logo-height: 35px;
+  --each-project-logo-height: 45px;
 
   --steps-project-details-image-width: 500px;
   --steps-login-image-width: 350px;
@@ -122,7 +122,7 @@
 .all-header-download-button-text {
   font-weight: 400;
   font-size: var(--text-font-size);
-  color: var(--text-color);
+  color: var(--button-text-color);
 }
 
 .all-header-language-button {
@@ -222,7 +222,7 @@
 .download-button-text {
   font-weight: 400;
   font-size: var(--text-font-size);
-  color: var(--text-color);
+  color: var(--button-text-color);
 }
 .download-button-icon {
   fill: var(--text-color);
@@ -359,8 +359,8 @@
   min-width: 100%;
 }
 .each-project-logo {
-  height: 27px;
-  min-height: 27px;
+  height: var(--each-project-logo-height);
+  min-height: var(--each-project-logo-height);
   margin: 0 var(--box-padding);
 }
 
@@ -623,7 +623,7 @@
 }
 
 .all-footer {
-  background-color: rgba(5, 5, 6, 1);
+  background-color: none;
   width: 100vw;
   min-width: 100vw;
   height: fit-content;
@@ -658,9 +658,9 @@
 
 .all-footer-input-wrapper {
   display: flex;
-  align-items: center;
-  height: var(--footer-input-height);
-  min-height: var(--footer-input-height);
+  flex-direction: column;
+  height: fit-content;
+  min-height: fit-content;
   width: var(--footer-input-width);
   min-width: var(--footer-input-width);
   margin-top: var(--box-padding);
@@ -669,23 +669,24 @@
 }
 .all-footer-input {
   flex: 1;
-  height: 100%;
-  min-height: 100%;
+  height: var(--footer-input-height);
+  min-height: var(--footer-input-height);
   padding: 2px 15px;
   font-weight: 500;
   color: var(--text-color);
   font-size: 14px;
   outline: none;
-  border: none;
-  background-color: rgba(38, 38, 38, 1);
+  border: 1px solid rgba(117, 117, 117, 1);
+  border-radius: 8px;
+  background-color: rgba(248, 248, 248, 1);
 }
 .all-footer-input:focus {
   padding-bottom: 0;
   border-bottom: 2px solid var(--button-background-color);
 }
 .all-footer-input-button {
-  height: 100%;
-  min-height: 100%;
+  height: 35px;
+  min-height: 35px;
   width: var(--footer-input-button-width);
   min-width: var(--footer-input-button-width);
   display: flex;
@@ -696,6 +697,7 @@
   cursor: pointer;
   outline: none;
   border: none;
+  border-radius: 40px;
 }
 .all-footer-input-button-text {
   font-weight: 500;
