@@ -35,8 +35,9 @@
   --update-installation-image-width: 600px;
   --update-text-width: 660px;
 
-  --footer-input-height: 35px;
+  --footer-input-height: 45px;
   --footer-input-width: 500px;
+  --footer-input-gap: 20px;
   --footer-input-button-width: 120px;
 }
 
@@ -679,6 +680,7 @@
   border: 1px solid rgba(117, 117, 117, 1);
   border-radius: 8px;
   background-color: rgba(248, 248, 248, 1);
+  margin-bottom: var(--footer-input-gap);
 }
 .all-footer-input:focus {
   padding-bottom: 0;
@@ -693,7 +695,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--button-background-color);
+  background-color: var(--footer-button-background-color);
   cursor: pointer;
   outline: none;
   border: none;
@@ -702,7 +704,7 @@
 .all-footer-input-button-text {
   font-weight: 500;
   font-size: 14px;
-  color: var(--text-color);
+  color: var(--button-text-color);
   margin-right: 8px;
 }
 .all-footer-input-button-icon {
