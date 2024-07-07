@@ -705,7 +705,7 @@
   font-weight: 500;
   font-size: 14px;
   color: var(--button-text-color);
-  margin-right: 8px;
+  /* margin-right: 8px; */
 }
 .all-footer-input-button-icon {
   height: 15px;
