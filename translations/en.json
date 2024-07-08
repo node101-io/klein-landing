@@ -22,7 +22,7 @@
 	"Use Klein to access your node from various platforms and monitor its CPU, RAM, and memory usage.": "Use Klein to access your node from various platforms and monitor its CPU, RAM, and memory usage.",
 	"Make your node's uptime ": "Make your node's uptime ",
 	"100%": "100%",
-  ".": ".",
+	".": ".",
 	"Latest technology,": "Latest technology,",
 	"Highest block.": "Highest block.",
 	"By using the foremost technology, Klein brings most effective ways of accessing the chain to you, making sure you are always on the highest block, validating as hard as you can. Without a single line of code, be the validator every chain needs.": "By using the foremost technology, Klein brings most effective ways of accessing the chain to you, making sure you are always on the highest block, validating as hard as you can. Without a single line of code, be the validator every chain needs.",
@@ -39,5 +39,8 @@
 	"You can reach us anytime from": "You can reach us anytime from",
 	"email address.": "email address.",
 	"Designed & Developed by": "Designed & Developed by",
-	"All rights reserved.": "All rights reserved."
+	"All rights reserved.": "All rights reserved.",
+	"Klein helps you to install and manage your nodes and join testnets without writing a single line of code in tens of different chains.": "Klein helps you to install and manage your nodes and join testnets without writing a single line of code in tens of different chains.",
+	"Klein helps you to install and manage your nodes and join testnets without": "Klein helps you to install and manage your nodes and join testnets without",
+	"writing a single line of code in tens of different chains.": "writing a single line of code in tens of different chains."
 }

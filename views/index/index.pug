@@ -17,19 +17,16 @@ block content
       if lang == 'tr'
         a.all-header-language-button(href='/?lang=en')
           .all-header-language-button-text English
-          img.all-header-language-button-image(src=`${URL}/img/flags/en.png` alt='klein language english')
       else
         a.all-header-language-button(href='/?lang=tr')
           .all-header-language-button-text Türkçe
-          img.all-header-language-button-image(src=`${URL}/img/flags/tr.png` alt='klein language turkish')
     .all-content
       .title-wrapper
         h1.title= __('Install Nodes')
         h1.title= __('With Just a Click')
         h2.subtitle
-          span= __('Klein is a public-good project aiming for everyone to be able to ')
-          span.subtitle-highlight= __('install and manage')
-          span= __(' their nodes without writing a single line of code in tens of different Cosmos chains.')
+          span= __('Klein helps you to install and manage your nodes and join testnets without')
+          span= __('writing a single line of code in tens of different chains.')
       if os && download_links
         .download-wrapper
           a.download-button(href=download_links[os] target='_blank')
@@ -54,11 +51,11 @@ block content
       .product-images-wrapper
         img.product-header-image(src=`${URL}/img/klein/header.png` alt='Klein testnet mainnet header image')
         img.product-projects-image(src=`${URL}/img/klein/projects.png` alt='Klein projects board image')
-        img.product-login-image(src=`${URL}/img/klein/login.png` alt='Klein login image')
         img.product-small-details-image(src=`${URL}/img/klein/details-small.png` alt='Klein small details image')
       .security-wrapper
-        h1.security-title= __('Your Node,')
-        h1.security-title(style='margin-left: auto')= __('Your Privacy.')
+        .security-title-wrapper
+          h1.security-title= __('Your Node,')
+          h1.security-title= __('Your Privacy.')
         p.security-description= __('Klein does not access, store, save, record, or share your information in any way. We only provide a beautiful and useful interface for you to control your node more efficiently. Your node is yours and yours only. We do not have access to it, and we do not want to.')
       .projects-wrapper
         each project in projects
@@ -87,9 +84,7 @@ block content
           img.graphs-one-image(src=`${URL}/img/klein/graph1.png` alt='Klein graph one image')
           img.graphs-two-image(src=`${URL}/img/klein/graph2.png` alt='Klein graph two image')
       .update-wrapper
-        .update-image-wrapper
-          img.update-navbar-image(src=`${URL}/img/klein/navbar.png` alt='Klein navbar image')
-          img.update-installation-image(src=`${URL}/img/klein/installation.png` alt='Klein installation image')
+        img.update-installation-image(src=`${URL}/img/klein/installation.png` alt='Klein installation image')
         .update-text-wrapper
           h1.update-title
             span.update-title-bottom= __('Latest technology,')
