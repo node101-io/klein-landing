@@ -22,7 +22,7 @@
 	"Use Klein to access your node from various platforms and monitor its CPU, RAM, and memory usage.": "Node'larınıza çeşitli platformlardan erişmek ve CPU, RAM ve bellek kullanımını izlemek için Klein'ı kullanın.",
 	"Make your node's uptime ": "Node'unuzun çalışma süresini ",
 	"100%": "100%",
-  ".": " yapın.",
+	".": " yapın.",
 	"Latest technology,": "En son teknoloji,",
 	"Highest block.": "En yüksek blok.",
 	"By using the foremost technology, Klein brings most effective ways of accessing the chain to you, making sure you are always on the highest block, validating as hard as you can. Without a single line of code, be the validator every chain needs.": "En son teknolojiyi kullanan Klein, istediğiniz blockchain'e erişmenin en etkili yollarını size sunar, her zaman en yüksek blokta olduğunuzdan emin olur ve olabildiğince çok sayıda validasyon yapar. Tek bir kod satırı yazmadan, her zincirin ihtiyaç duyduğu validatör olmanızı sağlar.",
@@ -39,5 +39,8 @@
 	"You can reach us anytime from": "Bize istediğiniz zaman",
 	"email address.": "e-posta adresinden ulaşabilirsiniz.",
 	"Designed & Developed by": "Klein, İstanbul merkezli bir Cosmos validatörü olan",
-  "All rights reserved.": "tarafından tasarlanmıştır ve geliştirilmiştir. Her hakkı saklıdır."
+	"All rights reserved.": "tarafından tasarlanmıştır ve geliştirilmiştir. Her hakkı saklıdır.",
+	"Klein helps you to install and manage your nodes and join testnets without": "Klein, size node'larınızı kurmanıza ve yönetmenize yardımcı olur ve",
+	"writing a single line of code in tens of different chains.": "onlarca farklı chainde testnetlere katılmanıza olanak tanır.",
+	"Download Soon": "Yakında"
 }
