@@ -39,8 +39,8 @@ window.addEventListener('load', () => {
   projectsSlideAnimation();
 
   allWrapper.addEventListener('scroll', event => {
-    allHeaderWrapper.style.borderBottomColor = `rgba(254, 254, 254, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
-    allHeaderWrapper.style.boxShadow = `0 0 3px rgba(254, 254, 254, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
+    allHeaderWrapper.style.borderBottomColor = `rgba(14, 14, 16, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
+    allHeaderWrapper.style.boxShadow = `0 0 3px rgba(14, 14, 16, ${0.2 * Math.min(event.target.scrollTop, allHeaderAnimationMaxHeight) / allHeaderAnimationMaxHeight})`;
   });
 
   let isSubscribeFormSent = false;

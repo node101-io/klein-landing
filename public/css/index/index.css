@@ -18,7 +18,7 @@
   --product-header-image-height: 60px;
   --product-projects-image-width: 1000px;
   --product-small-details-width: 320px;
-  --product-small-details-image-top-gap: -140px;
+  --product-small-details-image-top-gap: -60px;
 
   --security-description-wrapper-width: 500px;
 
@@ -74,8 +74,11 @@
   text-decoration: none;
   margin-right: auto;
 }
-.all-header-logo {
+.all-header-logo, .all-header-logo-responsive {
   height: 24px;
+}
+.all-header-logo-responsive {
+  display: none;
 }
 
 .all-header-socials-wrapper {
@@ -144,7 +147,6 @@
   font-weight: 600;
   font-size: var(--text-font-size);
   color: var(--main-color);
-  margin-right: 7px;
 }
 .all-header-language-button-image {
   height: 18px;
@@ -172,7 +174,7 @@
   padding-top: var(--header-height);
 }
 .title {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 60px;
   line-height: 130%;
   color: var(--text-color);
@@ -212,7 +214,7 @@
   min-height: var(--download-button-height);
   width: var(--download-button-width);
   min-width: var(--download-button-width);
-  cursor: pointer;
+  cursor: default;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -227,7 +229,7 @@
   color: var(--button-text-color);
 }
 .download-button-icon {
-  fill: var(--text-color);
+  fill: var(--button-text-color);
   height: 18px;
   width: auto;
 }
@@ -249,7 +251,7 @@
 }
 .other-download-button {
   text-decoration: none;
-  cursor: pointer;
+  cursor: default;
   margin-left: 10px;
   opacity: 0.9;
   height: fit-content;
@@ -525,7 +527,7 @@
   min-height: fit-content;
   width: 100%;
   min-width: 100%;
-  padding: 0 var(--content-horizontal-padding);
+  padding: 0 calc(var(--content-gap) / 2);
 }
 
 
@@ -714,6 +716,7 @@
   color: var(--button-background-color);
   margin: 0 5px;
   text-decoration: none;
+  fill: var(--text-color);
 }
 .all-footer-reach-us-link:hover {
   text-decoration: underline;
@@ -744,7 +747,7 @@
 @media only screen and (max-width: 1200px) {
   :root {
     --content-gap: 120px;
-    --product-login-image-width: 300px;
+    --product-small-details-width: 300px;
     --security-description-wrapper-width: 400px;
   }
 }
@@ -845,7 +848,7 @@
 @media only screen and (max-width: 860px) {
   :root {
     --product-header-image-height: 40px;
-    --product-login-image-width: 250px;
+    --product-small-details-width: 250px;
   }
   .product-small-details-image {
     right: 0;
@@ -937,7 +940,7 @@
     --text-font-size: 15px;
     --header-download-button-height: 35px;
     --header-download-button-width: 100px;
-    --product-login-image-width: 200px;
+    --product-small-details-width: 200px;
     --product-header-image-height: 30px;
     --steps-login-image-width: 220px;
     --security-description-wrapper-width: 310px;
@@ -953,6 +956,9 @@
   }
   .subtitle {
     font-size: 17px;
+  }
+  .product-small-details-image {
+    display: none;
   }
   .each-project-logo {
     height: 18px;
@@ -1016,7 +1022,7 @@
     --text-font-size: 15px;
     --header-download-button-height: 35px;
     --header-download-button-width: 100px;
-    --product-login-image-width: 150px;
+    --product-small-details-width: 150px;
     --product-header-image-height: 30px;
     --steps-login-image-width: 190px;
     --security-description-wrapper-width: 310px;
@@ -1025,6 +1031,12 @@
     --footer-input-height: 30px;
     --footer-input-width: 300px;
     --footer-input-button-width: 90px;
+  }
+  .all-header-logo {
+    display: none;
+  }
+  .all-header-logo-responsive {
+    display: unset;
   }
   .title-wrapper {
     height: 350px;
@@ -1082,7 +1094,7 @@
     --text-font-size: 14px;
     --header-download-button-height: 35px;
     --header-download-button-width: 100px;
-    --product-login-image-width: 140px;
+    --product-small-details-width: 140px;
     --product-header-image-height: 30px;
     --steps-login-image-width: 190px;
     --security-description-wrapper-width: 310px;
