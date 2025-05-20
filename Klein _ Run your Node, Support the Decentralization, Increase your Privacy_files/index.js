@@ -64,16 +64,24 @@ window.addEventListener('load', () => {
     if (!email || !email.trim().length)
       return emailValidationError.style.display = 'block';
 
-    serverRequest('/subscribe', 'POST', {
-      email
-    }, res => {
-      if (!res.success && res.error == 'duplicated_unique_field')
-        return alreadyRegisteredMessage.style.display = 'block';
-      if (!res.success)
-        return unknownError.style.display = 'block';
+    fetch("https://node101.io/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        type: 'klein'
+      }),
+    })
+      .then(response => response.json())
+      .then(res => {
+        if ((!res || res.error) && res.error !== 'duplicated_unique_field')
+          return unknownError.style.display = 'block';
 
-      isSubscribeFormSent = true;
-      successMessage.style.display = 'block';
-    });
+        isSubscribeFormSent = true;
+        successMessage.style.display = 'block';  
+      })
+      .catch(error => {
+        unknownError.style.display = 'block';
+      });
   });
 });
